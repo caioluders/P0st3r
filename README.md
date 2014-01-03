@@ -16,6 +16,8 @@ Well , for benchmarking , fuzzing , and flood things ( MUHAHAHA !)
 
 `$ - python p0st3r.py -u http://127.0.0.1/ -p "1:1 2:2 3:3 4:4" -r 666 -d 5`
 
+[Video] (http://asciinema.org/a/7042)
+
 ##Usage :
 
 | Parameters        | Explanation
