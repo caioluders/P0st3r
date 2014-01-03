@@ -1,8 +1,8 @@
 #P0st3r
 
-.__  _,     ,  _,    
-[__)|.|  __-+-'_) ._.
-|   |_| _)  | ._) [
+.__  _,     ,  _,<br>    
+[__)|.|  __-+-'_) ._.<br>
+|   |_| _)  | ._) [<br>
 
 ##What it is ? 
 
@@ -18,13 +18,13 @@ Well , for benchmarking , fuzzing , and flood things ( MUHAHAHA !)
 
 ##Usage :
 
-> -h, --help            show this help message and exit
-> -u http://url.com/, --url http://url.com/
->                       URL to request
-> -p variable:data, --parameters variable:data
->                       Parameters for $_POST
-> -r x, --requests x    Number of requests
-> -d x, --delay x       Delay ( sec ) for each request
+> -h, --help            show this help message and exit <br>
+> -u http://url.com/, --url http://url.com/ <br>
+>                       URL to request <br>
+> -p variable:data, --parameters variable:data <br>
+>                       Parameters for $_POST <br>
+> -r x, --requests x    Number of requests <br> 
+> -d x, --delay x       Delay ( sec ) for each request <br>
 
 
 ##Upcoming in next versions : 
