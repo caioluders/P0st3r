@@ -1,8 +1,8 @@
 #P0st3r
 
-<h1>.__  _,     ,  _,    
+.__  _,     ,  _,    
 [__)|.|  __-+-'_) ._.
-|   |_| _)  | ._) [ </h1>
+|   |_| _)  | ._) [
 
 ##What it is ? 
 
@@ -14,7 +14,7 @@ Well , for benchmarking , fuzzing , and flood things ( MUHAHAHA !)
 
 ##Example :
 
-`$ - python p0st3r.py -u http://127.0.0.1/ -p "1:1 2:2 3:3 4:4" -r 666 -d 5
+`$ - python p0st3r.py -u http://127.0.0.1/ -p "1:1 2:2 3:3 4:4" -r 666 -d 5`
 
 ##Usage :
 
