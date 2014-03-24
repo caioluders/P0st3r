@@ -1,17 +1,18 @@
-
-
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import urllib , sys , time , argparse , math
-import sys
-import time
-from time import sleep
-from optparse import OptionParser
+#
+# Author: geolado | g3ol4d0
+# Email : g3ol4d0[at]gmail.com
+# Python 2.7
+
+import urllib , sys , time , argparse , math , sys , time , optparse , os 
 
 
 def banner() :
-   screen_width, screen_height = getTerminalSize()
-   center_width = screen_width
+   screen = getTerminalSize()
+   screen_height = screen[0]
+   screen_width = screen[1]
+   center_width = screen[1]
    banner_ascii = ["          ,       ",
                    "._  _  __-+- _ ._.",
                    "[_)(_)_)  | (/,[  ",
@@ -26,28 +27,11 @@ def banner() :
    print("_"*screen_width)       
 
 def getTerminalSize():
-    def ioctl_GWINSZ(fd):
-        try:
-            import fcntl, termios, struct, os
-            cr = struct.unpack('hh', fcntl.ioctl(fd, termios.TIOCGWINSZ,
-        '1234'))
-        except:
-            return None
-        return cr
-    cr = ioctl_GWINSZ(0) or ioctl_GWINSZ(1) or ioctl_GWINSZ(2)
-    if not cr:
-        try:
-            fd = os.open(os.ctermid(), os.O_RDONLY)
-            cr = ioctl_GWINSZ(fd)
-            os.close(fd)
-        except:
-            pass
-    if not cr:
-        try:
-            cr = (env['LINES'], env['COLUMNS'])
-        except:
-            cr = (25, 80)
-    return int(cr[1]), int(cr[0])    
+
+    line = os.popen('stty size', 'r').read().split()
+    line = map(int , line)
+
+    return line 
 
 class poster(object) :
     
@@ -69,8 +53,10 @@ class poster(object) :
       self.pd = dict(self.pd)  
 
    def progress(self , width, percent):
-      screen_width, screen_height = getTerminalSize()
-      center_width = screen_width
+      screen = getTerminalSize()
+      screen_height = screen[0]
+      screen_width = screen[1]
+      center_width = screen[1]
       actual_percent = percent*100/self.requests
       width_percent = actual_percent*(screen_width-11)/100
       fill = (screen_width-11)*"."
@@ -86,8 +72,10 @@ class poster(object) :
       self.f.close()
 
    def send_post(self) :
-      screen_width, screen_height = getTerminalSize()
-      center_width = screen_width
+      screen = getTerminalSize()
+      screen_height = screen[0]
+      screen_width = screen[1]
+      center_width = screen[1]
       print("[i] Sending requests ... ")
       for i in range(self.requests) :
          sleep(self.delay)
